@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KghHwpa5t1Xsb5M4JWC6lAof8gA6JIzqy6m1wnqiKZi8VwRzPJYMtID2w4WVj7rdvosvrtMc5dHfC+0nE3P+kg==",
+  "dgSpecHash": "7aKDceknFplf+pAYmVFwG2eY/ijHa9irm5nAHL/crUWd3a9uPgNHSWupoB/aiklDBlSIWBglQlq5gT34cG6ZSA==",
   "success": true,
   "projectFilePath": "C:\\Users\\GATO\\Desktop\\PROJETOS\\CursoOnline\\test\\CursoOnline.DominioTest\\CursoOnline.DominioTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\GATO\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\expectedobjects\\3.5.4\\expectedobjects.3.5.4.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",
