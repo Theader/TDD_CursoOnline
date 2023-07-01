@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using CursoOnline.Dominio.Cursos;
 using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._Util;
 using ExpectedObjects;
@@ -83,36 +84,6 @@ namespace CursoOnline.DominioTest.Cursos
                   => CursoBuilder.Novo().ComValor(pValorInvalido)
                   .Build())
                 .ExceptionComMensagem("Valor precisa ser maior que 0.");
-        }
-
-        public enum PublicoAlvo
-        {
-            Estudante, 
-            Universitario, 
-            Empregado,
-            Empreendedor
-        }
-        public class Curso
-        {
-            public string Nome { get; private set; }
-            public int CargaHoraria { get; private set; }
-            public PublicoAlvo PublicoAlvo { get; private set; }
-            public double Valor { get; private set; }
-
-            public Curso(string nome, int cargaHoraria, PublicoAlvo publicoAlvo, double valor)
-            {
-                if (string.IsNullOrEmpty(nome))
-                    throw new ArgumentException("Nome precisa ser preenchido.");
-                if (cargaHoraria < 1)
-                    throw new ArgumentException("CargaHorária precisa ser maior que 0.");
-                if (valor < 1)
-                    throw new ArgumentException("Valor precisa ser maior que 0.");
-
-                this.Nome = nome;
-                this.CargaHoraria = cargaHoraria;
-                this.PublicoAlvo = publicoAlvo;
-                this.Valor = valor;
-            }
         }
     }
 }

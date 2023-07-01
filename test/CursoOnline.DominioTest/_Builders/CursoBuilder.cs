@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using static CursoOnline.DominioTest.Cursos.CursoTest;
 using Xunit.Abstractions;
+using CursoOnline.Dominio.Cursos;
 
 namespace CursoOnline.DominioTest._Builders
 {

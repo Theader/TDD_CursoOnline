@@ -98,3 +98,6 @@ C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\obj\Debu
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\obj\Debug\netcoreapp3.1\CursoOnline.DominioTest.genruntimeconfig.cache
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\ExpectedObjects.dll
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\Bogus.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
