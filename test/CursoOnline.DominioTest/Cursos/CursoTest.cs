@@ -1,4 +1,5 @@
-﻿using CursoOnline.DominioTest._Util;
+﻿using CursoOnline.DominioTest._Builders;
+using CursoOnline.DominioTest._Util;
 using ExpectedObjects;
 using System;
 using Xunit;
@@ -48,24 +49,31 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(null)]
         public void NaoPermitirNomeInvalido(string nomeInvalido)
         {
-            Assert.Throws<ArgumentException>(() 
-                   => new Curso(nomeInvalido, _cargaHoraria, _publicoAlvo, _valor))
-                   .ExceptionComMensagem("Nome precisa ser preenchido.");
+            Assert.Throws<ArgumentException>(()
+                   => CursoBuilder.Novo().ComNome(nomeInvalido)
+                   .Build())
+                .ExceptionComMensagem("Nome precisa ser preenchido.");
         }
 
-        [Fact]
-        public void NaoPermitirCargaHorariaMenorQue1()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-23)]
+        public void NaoPermitirCargaHorariaMenorQue1(int pCargaHorariaInvalida)
         {
 
-            Assert.Throws<ArgumentException>(() 
-                   => new Curso(_nome, 0, _publicoAlvo, _valor))
-                   .ExceptionComMensagem("CargaHorária precisa ser maior que 0.");
+            Assert.Throws<ArgumentException>(()
+                   => CursoBuilder.Novo().ComCargaHoraria(pCargaHorariaInvalida)
+                   .Build())
+                 .ExceptionComMensagem("CargaHorária precisa ser maior que 0.") ;
         }
-        [Fact]
-        public void NaoPermitirValorMenorQue1()
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        public void NaoPermitirValorMenorQue1(double pValorInvalido)
         {
-           Assert.Throws<ArgumentException>(() 
-                 => new Curso(_nome, _cargaHoraria,_publicoAlvo, 0))
+            Assert.Throws<ArgumentException>(()
+                  => CursoBuilder.Novo().ComValor(pValorInvalido)
+                  .Build())
                 .ExceptionComMensagem("Valor precisa ser maior que 0.");
         }
 
