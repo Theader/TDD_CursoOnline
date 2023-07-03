@@ -21,7 +21,7 @@ namespace CursoOnline.DominioTest._Builders
         }
         public Curso Build()
         {
-            return new Curso(_nome, _cargaHoraria, _publicoAlvo, _valor);
+            return new Curso(_nome, _descricao, _cargaHoraria, _publicoAlvo, _valor);
         }
         public CursoBuilder ComNome(string pNome)
         {

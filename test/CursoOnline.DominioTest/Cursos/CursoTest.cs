@@ -13,6 +13,7 @@ namespace CursoOnline.DominioTest.Cursos
     {
         private readonly ITestOutputHelper _output;
         private readonly string _nome;
+        private readonly string _descricao;
         private readonly int _cargaHoraria;
         private readonly PublicoAlvo _publicoAlvo;
         private readonly double _valor;
@@ -24,6 +25,7 @@ namespace CursoOnline.DominioTest.Cursos
             _output = output;
             _output.WriteLine("Construtor on");
             _nome = faker.Random.Word();
+            _descricao = faker.Random.Word();
             _cargaHoraria = faker.Random.Int(50,100);
             _publicoAlvo = PublicoAlvo.Estudante;
             _valor = faker.Random.Double(100, 1000);
@@ -46,10 +48,11 @@ namespace CursoOnline.DominioTest.Cursos
                 Nome = _nome,
                 CargaHoraria = _cargaHoraria,
                 PublicoAlvo = _publicoAlvo,
-                Valor = _valor
+                Valor = _valor,
+                Descricao = _descricao
             };
 
-            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
+            var curso = new Curso(cursoEsperado.Nome, cursoEsperado.Descricao, cursoEsperado.CargaHoraria, cursoEsperado.PublicoAlvo, cursoEsperado.Valor);
 
             cursoEsperado.ToExpectedObject().ShouldMatch(curso);
         }
@@ -63,6 +66,17 @@ namespace CursoOnline.DominioTest.Cursos
                    .Build())
                 .ExceptionComMensagem("Nome precisa ser preenchido.");
         }
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void NaoPermitirDescricaoInvalida(string descricaoInvalido)
+        {
+            Assert.Throws<ArgumentException>(()
+                   => CursoBuilder.Novo().ComDescricao(descricaoInvalido)
+                   .Build())
+                .ExceptionComMensagem("Descrição precisa ser preenchida.");
+        }
+
 
         [Theory]
         [InlineData(0)]
