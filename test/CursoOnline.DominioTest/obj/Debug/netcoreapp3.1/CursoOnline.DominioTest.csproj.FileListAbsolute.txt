@@ -101,3 +101,7 @@ C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debu
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\System.Diagnostics.EventLog.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\test\CursoOnline.DominioTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll
