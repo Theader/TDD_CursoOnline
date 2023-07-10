@@ -1,4 +1,5 @@
-﻿using CursoOnline.Dominio.Cursos;
+﻿using Bogus;
+using CursoOnline.Dominio.Cursos;
 using Moq;
 using System;
 using Xunit;
@@ -7,21 +8,37 @@ namespace CursoOnline.DominioTest.Cursos
 {
     public class ArmazenadorDeCursoTest
     {
+        private readonly CursoDTO _cursoDTO;
+        private readonly Mock<ICursoRepositorio> _cursoRepositorioMock;
+        private readonly ArmazenadorDeCurso _armazenadorDeCurso;
+
+        public ArmazenadorDeCursoTest()
+        {
+            var fake = new Faker();
+            _cursoDTO = new CursoDTO
+            {
+                Nome = fake.Random.Word(),
+                CargaHoraria = fake.Random.Int(20),
+                PublicoAlvoId =(int)PublicoAlvo.Estudante,
+                Valor = fake.Random.Double(20,100),
+                Descricao = fake.Lorem.Word()
+            };
+             _cursoRepositorioMock = new Mock<ICursoRepositorio>();
+             _armazenadorDeCurso = new ArmazenadorDeCurso(_cursoRepositorioMock.Object);
+
+        }
         [Fact]
         public void DeveAdicionarCurso()
         {
-            var CursoDTO = new CursoDTO
-            {
-                Nome = "Curso a",
-                CargaHoraria = 50,
-                PublicoAlvoId = 1,
-                Valor = (double)50.00,
-                Descricao = "HUEBR"
-            };
-            var CursoRepositorioMock = new Mock<ICursoRepositorio>();
-            var ArmazenadorDeCurso = new ArmazenadorDeCurso(CursoRepositorioMock.Object);
-            ArmazenadorDeCurso.Armazenar(CursoDTO);
-            CursoRepositorioMock.Verify(x => x.Adicionar(It.IsAny<Curso>()));
+            
+            _armazenadorDeCurso.Armazenar(_cursoDTO);
+            _cursoRepositorioMock.Verify(x => x.Adicionar(It.Is<Curso>
+                (c => c.Nome == _cursoDTO.Nome
+                && c.Descricao == _cursoDTO.Descricao
+                //&& c.PublicoAlvo == PublicoAlvo.Estudante
+                //&& c.CargaHoraria == CursoDTO.CargaHoraria
+                //&& c.Valor == CursoDTO.Valor
+                )),Times.AtLeast(1));
         }
         public class ArmazenadorDeCurso 
         {
