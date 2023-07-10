@@ -1,8 +1,10 @@
 ﻿using Bogus;
 using CursoOnline.Dominio.Cursos;
+using CursoOnline.DominioTest._Util;
 using Moq;
 using System;
 using Xunit;
+using Xunit.Sdk;
 
 namespace CursoOnline.DominioTest.Cursos
 {
@@ -19,7 +21,7 @@ namespace CursoOnline.DominioTest.Cursos
             {
                 Nome = fake.Random.Word(),
                 CargaHoraria = fake.Random.Int(20),
-                PublicoAlvoId =(int)PublicoAlvo.Estudante,
+                PublicoAlvo = "Estudante",
                 Valor = fake.Random.Double(20,100),
                 Descricao = fake.Lorem.Word()
             };
@@ -40,6 +42,13 @@ namespace CursoOnline.DominioTest.Cursos
                 //&& c.Valor == CursoDTO.Valor
                 )),Times.AtLeast(1));
         }
+        [Fact]
+        public void NaoDeveAdicionarComPublicoAlvoInvalido()
+        {
+            _cursoDTO.PublicoAlvo = "Medico";
+            Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
+                .ExceptionComMensagem("Publico Alvo Inválido!");
+        }
         public class ArmazenadorDeCurso 
         {
             private readonly ICursoRepositorio CursoRepository;
@@ -51,9 +60,13 @@ namespace CursoOnline.DominioTest.Cursos
 
             public void Armazenar(CursoDTO cursoDTO)
             {
+                Enum.TryParse(typeof(PublicoAlvo), cursoDTO.PublicoAlvo, out var _publicoAlvo);
+                if (_publicoAlvo == null)
+                    throw new ArgumentException("Publico Alvo Inválido!");
+
                 var curso =
                     new Curso(cursoDTO.Nome, cursoDTO.Descricao, cursoDTO.CargaHoraria
-                             ,PublicoAlvo.Estudante, cursoDTO.Valor);
+                             ,(PublicoAlvo)_publicoAlvo, cursoDTO.Valor);
                 CursoRepository.Adicionar(curso);
             }
         }
@@ -65,7 +78,7 @@ namespace CursoOnline.DominioTest.Cursos
         {
             public string Nome { get; internal set; }
             public int CargaHoraria { get; internal set; }
-            public int PublicoAlvoId { get; internal set; }
+            public string PublicoAlvo { get; internal set; }
             public double Valor { get; internal set; }
             public string Descricao { get; internal set; }
         }
