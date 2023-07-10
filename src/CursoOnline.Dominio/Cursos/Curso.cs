@@ -36,4 +36,9 @@ namespace CursoOnline.Dominio.Cursos
         Empregado,
         Empreendedor
     }
+    public interface ICursoRepositorio
+    {
+        void Adicionar(Curso curso);
+        Curso ObterPeloNome(string nome);
+    }
 }

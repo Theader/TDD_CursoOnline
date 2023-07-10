@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using CursoOnline.Dominio.Cursos;
+using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._Util;
 using Moq;
 using System;
@@ -49,38 +50,15 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
                 .ExceptionComMensagem("Publico Alvo Inválido!");
         }
-        public class ArmazenadorDeCurso 
+        [Fact]
+        public void NaoDeveAdicionarCursoComNomeJaExistente()
         {
-            private readonly ICursoRepositorio CursoRepository;
+            var cursoJaSalvo = CursoBuilder.Novo().ComNome(_cursoDTO.Nome).Build();
+            _cursoRepositorioMock.Setup(x => x.ObterPeloNome(_cursoDTO.Nome)).Returns(cursoJaSalvo);
 
-            public ArmazenadorDeCurso(ICursoRepositorio _CursoRepository)
-            {
-                this.CursoRepository = _CursoRepository;
-            }
+            Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
+            .ExceptionComMensagem("Nome do Curso já existe na base!");
+        }
 
-            public void Armazenar(CursoDTO cursoDTO)
-            {
-                Enum.TryParse(typeof(PublicoAlvo), cursoDTO.PublicoAlvo, out var _publicoAlvo);
-                if (_publicoAlvo == null)
-                    throw new ArgumentException("Publico Alvo Inválido!");
-
-                var curso =
-                    new Curso(cursoDTO.Nome, cursoDTO.Descricao, cursoDTO.CargaHoraria
-                             ,(PublicoAlvo)_publicoAlvo, cursoDTO.Valor);
-                CursoRepository.Adicionar(curso);
-            }
-        }
-        public interface ICursoRepositorio
-        {
-            void Adicionar(Curso curso);
-        }
-        public class CursoDTO
-        {
-            public string Nome { get; internal set; }
-            public int CargaHoraria { get; internal set; }
-            public string PublicoAlvo { get; internal set; }
-            public double Valor { get; internal set; }
-            public string Descricao { get; internal set; }
-        }
     }
 }
