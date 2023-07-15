@@ -5,7 +5,6 @@ using CursoOnline.DominioTest._Util;
 using Moq;
 using System;
 using Xunit;
-using Xunit.Sdk;
 
 namespace CursoOnline.DominioTest.Cursos
 {
