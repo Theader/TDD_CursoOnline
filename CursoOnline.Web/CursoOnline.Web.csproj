@@ -7,9 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.27" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CursoOnline.Ioc\CursoOnline.Ioc.csproj" />
     <ProjectReference Include="..\src\CursoOnline.Dominio\CursoOnline.Dominio.csproj" />
   </ItemGroup>
 
