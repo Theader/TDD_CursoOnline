@@ -6,10 +6,17 @@ namespace CursoOnline.Web.Controllers
 {
     public class CursoController : Controller
     {
+        private readonly ArmazenadorDeCurso _armazenadorDeCurso;
+
+        public CursoController(ArmazenadorDeCurso armazenadorDeCurso)
+        {
+            this._armazenadorDeCurso = armazenadorDeCurso;
+        }
         // GET: CursoController
         public IActionResult Index()
         {
-            return View("Index",);
+            return Ok();
+            //return View("Index",);
         }
 
         // GET: CursoController/Details/5
@@ -22,6 +29,7 @@ namespace CursoOnline.Web.Controllers
         [HttpPost]
         public ActionResult Salvar(CursoDTO model)
         {
+            _armazenadorDeCurso.Armazenar(model);
             return Ok();
         }
     }

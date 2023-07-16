@@ -1,0 +1,15 @@
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Ioc.deps.json
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Ioc.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Ioc.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Dados.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.csproj.AssemblyReference.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.AssemblyInfoInputs.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.AssemblyInfo.cs
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.csproj.CoreCompileInputs.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.csproj.CopyComplete
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Ioc\obj\Debug\netcoreapp3.1\CursoOnline.Ioc.pdb

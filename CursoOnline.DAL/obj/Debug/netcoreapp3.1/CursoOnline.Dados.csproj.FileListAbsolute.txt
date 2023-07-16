@@ -1,0 +1,13 @@
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\bin\Debug\netcoreapp3.1\CursoOnline.Dados.deps.json
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\bin\Debug\netcoreapp3.1\CursoOnline.Dados.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\bin\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\bin\Debug\netcoreapp3.1\CursoOnline.Dominio.pdb
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.AssemblyReference.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.AssemblyInfoInputs.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.AssemblyInfo.cs
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.CoreCompileInputs.cache
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.csproj.CopyComplete
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.DAL\obj\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
