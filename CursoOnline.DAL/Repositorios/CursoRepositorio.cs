@@ -10,7 +10,12 @@ namespace CursoOnline.Dados.Repositorios
 {
     public class CursoRepositorio : RepositorioBase<Curso>, ICursoRepositorio
     {
-        public CursoRepositorio(ApplicationDbContext context) : base(context) { }
+        private readonly ApplicationDbContext context;
+
+        public CursoRepositorio(ApplicationDbContext context) : base(context)
+        {
+            this.context = context;
+        }
 
         public Curso ObterPeloNome(string nome)
         {

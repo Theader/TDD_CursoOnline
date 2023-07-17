@@ -1,4 +1,5 @@
-﻿using CursoOnline.Dados.Repositorios;
+﻿using CursoOnline.Dados.Contextos;
+using CursoOnline.Dados.Repositorios;
 using CursoOnline.DAL.Contextos;
 using CursoOnline.DAL.Repositorios;
 using CursoOnline.Dominio._Base;
@@ -18,6 +19,7 @@ namespace CursoOnline.Ioc
                     options.UseSqlServer(configuration["ConnectionString"]));
             services.AddScoped(typeof(IRepositorio<>), typeof(RepositorioBase<>));
             services.AddScoped(typeof(ICursoRepositorio), typeof(CursoRepositorio));
+            services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped<ArmazenadorDeCurso>();
         }
     }

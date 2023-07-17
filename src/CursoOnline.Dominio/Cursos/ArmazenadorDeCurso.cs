@@ -24,7 +24,7 @@ namespace CursoOnline.Dominio.Cursos
             var curso =
                 new Curso(cursoDTO.Nome, cursoDTO.Descricao, cursoDTO.CargaHoraria
                          , (PublicoAlvo)_publicoAlvo, cursoDTO.Valor);
-            CursoRepository.Adicionar(curso);
+            CursoRepository.Adicionar(curso);           
         }
     }
 }

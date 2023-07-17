@@ -16,6 +16,7 @@ namespace CursoOnline.DAL.Repositorios
         public void Adicionar(TEntidade entity)
         {
             Context.Set<TEntidade>().Add(entity);
+            Context.SaveChanges();
         }
         
         public virtual TEntidade ObterPorId(int id)

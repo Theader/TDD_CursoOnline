@@ -7,11 +7,11 @@ namespace CursoOnline.Dominio.Cursos
     {
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
-
         public int CargaHoraria { get; private set; }
         public PublicoAlvo PublicoAlvo { get; private set; }
         public double Valor { get; private set; }
 
+        private Curso(){}
         public Curso(string nome,string descricao, int cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
             if (string.IsNullOrEmpty(nome))
