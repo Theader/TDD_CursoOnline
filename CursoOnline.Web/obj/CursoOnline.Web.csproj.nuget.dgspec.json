@@ -224,6 +224,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[2.0.2, )"
+            },
+            "jQuery": {
+              "target": "Package",
+              "version": "[3.7.0, )"
             }
           },
           "imports": [

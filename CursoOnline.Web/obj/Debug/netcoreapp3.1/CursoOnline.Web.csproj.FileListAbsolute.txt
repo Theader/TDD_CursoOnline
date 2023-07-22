@@ -368,3 +368,4 @@ C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Web\bin\Debug\netcoreapp3
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Web\bin\Debug\netcoreapp3.1\CursoOnline.Ioc.pdb
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Web\bin\Debug\netcoreapp3.1\CursoOnline.Dados.pdb
 C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\GATO\Desktop\PROJETOS\CursoOnline\CursoOnline.Web\obj\Debug\netcoreapp3.1\Razor\Views\NovoOuEditar.cshtml.g.cs

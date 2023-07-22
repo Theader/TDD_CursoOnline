@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jAG/KsnUB2MPL9A/XIaByUSX3x4EeWQV2LtFdx0LioEIeeOKBRNPkEIybObqy75LnbqPzV3RTo8StAwbokTfTQ==",
+  "dgSpecHash": "qMXsuvLg0H8nmb5dgnr4lepqhVIOKgUGQFyRvlp73amidZzuPenZT8C56Kqn4hDVp5yDHnXVnQIuVaKb0TmVEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\GATO\\Desktop\\PROJETOS\\CursoOnline\\CursoOnline.Web\\CursoOnline.Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\GATO\\.nuget\\packages\\jquery\\3.7.0\\jquery.3.7.0.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.27\\microsoft.aspnetcore.mvc.razor.extensions.3.1.27.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.27\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.27.nupkg.sha512",
     "C:\\Users\\GATO\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.27\\microsoft.aspnetcore.razor.language.3.1.27.nupkg.sha512",
