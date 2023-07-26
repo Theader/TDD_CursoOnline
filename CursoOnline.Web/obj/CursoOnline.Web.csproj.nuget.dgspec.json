@@ -225,9 +225,17 @@
               "target": "Package",
               "version": "[2.0.2, )"
             },
+            "WebGrease": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "jQuery": {
               "target": "Package",
               "version": "[3.7.0, )"
+            },
+            "toastr": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             }
           },
           "imports": [

@@ -14,7 +14,8 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\GATO\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.3</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgWebGrease Condition=" '$(PkgWebGrease)' == '' ">C:\Users\GATO\.nuget\packages\webgrease\1.6.0</PkgWebGrease>
     <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">C:\Users\GATO\.nuget\packages\jquery\3.7.0</PkgjQuery>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\GATO\.nuget\packages\microsoft.codeanalysis.analyzers\2.9.3</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

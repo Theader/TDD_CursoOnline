@@ -1,16 +1,10 @@
-using CursoOnline.DAL.Contextos;
-using CursoOnline.Dominio._Base;
 using CursoOnline.Ioc;
+using CursoOnline.Web.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+ 
 namespace CursoOnline.Web
 {
     public class Startup
@@ -26,27 +20,24 @@ namespace CursoOnline.Web
         public void ConfigureServices(IServiceCollection services)
         {
             StartupIoc.ConfigureServices(services, Configuration);
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                config.Filters.Add(typeof(CustomExceptionFilter));
+            });
             services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //app.Use(async (context,next)) =>
+            //app.Use(async(Context, next)) =>
             //{
             //    await next.Invoke();
             //    var unitOfWork = (IUnitOfWork)context.RequestServices.GetService(typeof(IUnitOfWork));
             //    await unitOfWork.Commit();
-            //}
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            //});
+
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
 
             app.UseRouting();

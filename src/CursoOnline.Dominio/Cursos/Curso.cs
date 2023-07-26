@@ -14,14 +14,12 @@ namespace CursoOnline.Dominio.Cursos
         private Curso(){}
         public Curso(string nome,string descricao, int cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
-            if (string.IsNullOrEmpty(nome))
-                throw new ArgumentException("Nome precisa ser preenchido.");
-            if (string.IsNullOrEmpty(descricao))
-                throw new ArgumentException("Descrição precisa ser preenchida.");
-            if (cargaHoraria < 1)
-                throw new ArgumentException("CargaHorária precisa ser maior que 0.");
-            if (valor < 1)
-                throw new ArgumentException("Valor precisa ser maior que 0.");
+            ValidadorDeRegra.Novo()
+                .Quando(string.IsNullOrEmpty(nome), "Nome precisa ser preenchido.")
+                .Quando(string.IsNullOrEmpty(descricao), "Descrição precisa ser preenchida.")
+                .Quando(cargaHoraria < 1, "CargaHorária precisa ser maior que 0.")
+                .Quando(valor < 1, "Valor precisa ser maior que 0.")
+                .DispararExcecaoSeExistir();
 
             this.Nome = nome;
             this.CargaHoraria = cargaHoraria;
