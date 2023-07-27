@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using CursoOnline.Dominio._Base;
 using CursoOnline.Dominio.Cursos;
 using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._Util;
@@ -46,7 +47,7 @@ namespace CursoOnline.DominioTest.Cursos
         public void NaoDeveAdicionarComPublicoAlvoInvalido()
         {
             _cursoDTO.PublicoAlvo = "Medico";
-            Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
+            Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
                 .ExceptionComMensagem("Publico Alvo Inválido!");
         }
         [Fact]
@@ -55,7 +56,7 @@ namespace CursoOnline.DominioTest.Cursos
             var cursoJaSalvo = CursoBuilder.Novo().ComNome(_cursoDTO.Nome).Build();
             _cursoRepositorioMock.Setup(x => x.ObterPeloNome(_cursoDTO.Nome)).Returns(cursoJaSalvo);
 
-            Assert.Throws<ArgumentException>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
+            Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
             .ExceptionComMensagem("Nome do Curso já existe na base!");
         }
 

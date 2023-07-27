@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CursoOnline.Dominio._Base;
+using System;
 
 namespace CursoOnline.Dominio.Cursos
 {
@@ -14,12 +15,14 @@ namespace CursoOnline.Dominio.Cursos
         public void Armazenar(CursoDTO cursoDTO)
         {
             var cursoJaSalvo = CursoRepository.ObterPeloNome(cursoDTO.Nome);
-            if (cursoJaSalvo != null)
-                throw new ArgumentException("Nome do Curso já existe na base!");
 
             Enum.TryParse(typeof(PublicoAlvo), cursoDTO.PublicoAlvo, out var _publicoAlvo);
-            if (_publicoAlvo == null)
-                throw new ArgumentException("Publico Alvo Inválido!");
+
+            ValidadorDeRegra.Novo()
+                .Quando(cursoJaSalvo != null, "Nome do Curso já existe na base!")
+                .Quando(_publicoAlvo == null, "Publico Alvo Inválido!")
+                .DispararExcecaoSeExistir();
+                                
 
             var curso =
                 new Curso(cursoDTO.Nome, cursoDTO.Descricao, cursoDTO.CargaHoraria

@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using CursoOnline.Dominio._Base;
 using CursoOnline.Dominio.Cursos;
 using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._Util;
@@ -61,7 +62,7 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(null)]
         public void NaoPermitirNomeInvalido(string nomeInvalido)
         {
-            Assert.Throws<ArgumentException>(()
+            Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComNome(nomeInvalido)
                    .Build())
                 .ExceptionComMensagem("Nome precisa ser preenchido.");
@@ -71,7 +72,7 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(null)]
         public void NaoPermitirDescricaoInvalida(string descricaoInvalido)
         {
-            Assert.Throws<ArgumentException>(()
+            Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComDescricao(descricaoInvalido)
                    .Build())
                 .ExceptionComMensagem("Descrição precisa ser preenchida.");
@@ -84,7 +85,7 @@ namespace CursoOnline.DominioTest.Cursos
         public void NaoPermitirCargaHorariaMenorQue1(int pCargaHorariaInvalida)
         {
 
-            Assert.Throws<ArgumentException>(()
+            Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComCargaHoraria(pCargaHorariaInvalida)
                    .Build())
                  .ExceptionComMensagem("CargaHorária precisa ser maior que 0.") ;
@@ -94,7 +95,7 @@ namespace CursoOnline.DominioTest.Cursos
         [InlineData(-2)]
         public void NaoPermitirValorMenorQue1(double pValorInvalido)
         {
-            Assert.Throws<ArgumentException>(()
+            Assert.Throws<ExcecaoDeDominio>(()
                   => CursoBuilder.Novo().ComValor(pValorInvalido)
                   .Build())
                 .ExceptionComMensagem("Valor precisa ser maior que 0.");
