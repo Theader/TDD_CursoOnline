@@ -15,10 +15,10 @@ namespace CursoOnline.Dominio.Cursos
         public Curso(string nome,string descricao, int cargaHoraria, PublicoAlvo publicoAlvo, double valor)
         {
             ValidadorDeRegra.Novo()
-                .Quando(string.IsNullOrEmpty(nome), "Nome precisa ser preenchido.")
-                .Quando(string.IsNullOrEmpty(descricao), "Descrição precisa ser preenchida.")
-                .Quando(cargaHoraria < 1, "CargaHorária precisa ser maior que 0.")
-                .Quando(valor < 1, "Valor precisa ser maior que 0.")
+                .Quando(string.IsNullOrEmpty(nome), Resource.NomeInvalido)
+                .Quando(string.IsNullOrEmpty(descricao), Resource.DescricaoInvalida)
+                .Quando(cargaHoraria < 1, Resource.CargaHorariaInvalida)
+                .Quando(valor < 1, Resource.ValorInvalido)
                 .DispararExcecaoSeExistir();
 
             this.Nome = nome;
@@ -26,6 +26,33 @@ namespace CursoOnline.Dominio.Cursos
             this.PublicoAlvo = publicoAlvo;
             this.Valor = valor;
             this.Descricao = descricao;
+        }
+
+        public void AlterarNome(string nome)
+        {
+            ValidadorDeRegra.Novo()
+            .Quando(string.IsNullOrEmpty(nome), Resource.NomeInvalido)
+            .DispararExcecaoSeExistir();
+
+            Nome = nome;
+        }
+
+        public void AlterarCargaHoraria(int cargaHoraria)
+        {
+            ValidadorDeRegra.Novo()
+             .Quando(cargaHoraria <= 0, Resource.CargaHorariaInvalida)
+             .DispararExcecaoSeExistir();
+
+            CargaHoraria = cargaHoraria;
+        }
+
+        public void AlterarValor(double valor)
+        {
+            ValidadorDeRegra.Novo()
+             .Quando(valor <= 0, Resource.ValorInvalido)
+             .DispararExcecaoSeExistir();
+
+            Valor = valor;
         }
     }
     public enum PublicoAlvo

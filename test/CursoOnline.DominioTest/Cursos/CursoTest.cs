@@ -12,6 +12,7 @@ namespace CursoOnline.DominioTest.Cursos
 {
     public class CursoTest : IDisposable
     {
+        private readonly Faker faker;
         private readonly ITestOutputHelper _output;
         private readonly string _nome;
         private readonly string _descricao;
@@ -21,7 +22,7 @@ namespace CursoOnline.DominioTest.Cursos
 
         public CursoTest(ITestOutputHelper output)
         {
-            var faker = new Faker();
+            faker = new Faker();
 
             _output = output;
             _output.WriteLine("Construtor on");
@@ -65,7 +66,7 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComNome(nomeInvalido)
                    .Build())
-                .ExceptionComMensagem("Nome precisa ser preenchido.");
+                .ExceptionComMensagem(Resource.NomeInvalido);
         }
         [Theory]
         [InlineData("")]
@@ -75,7 +76,7 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComDescricao(descricaoInvalido)
                    .Build())
-                .ExceptionComMensagem("Descrição precisa ser preenchida.");
+                .ExceptionComMensagem(Resource.DescricaoInvalida);
         }
 
 
@@ -88,7 +89,7 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ExcecaoDeDominio>(()
                    => CursoBuilder.Novo().ComCargaHoraria(pCargaHorariaInvalida)
                    .Build())
-                 .ExceptionComMensagem("CargaHorária precisa ser maior que 0.") ;
+                 .ExceptionComMensagem(Resource.CargaHorariaInvalida) ;
         }
         [Theory]
         [InlineData(0)]
@@ -98,7 +99,69 @@ namespace CursoOnline.DominioTest.Cursos
             Assert.Throws<ExcecaoDeDominio>(()
                   => CursoBuilder.Novo().ComValor(pValorInvalido)
                   .Build())
-                .ExceptionComMensagem("Valor precisa ser maior que 0.");
+                .ExceptionComMensagem(Resource.ValorInvalido);
+        }
+        [Fact]
+        public void DeveAlterarNome()
+        {
+            var nomeEsperado = faker.Name.FullName();
+            var curso = CursoBuilder.Novo().Build();
+
+            curso.AlterarNome(nomeEsperado);
+            Assert.Equal(nomeEsperado, curso.Nome);
+        }
+        [Theory]
+        [InlineData("")]
+        [InlineData(null)]
+        public void NaoAlterarComNomeInvalido(string nomeInvalido)
+        {
+            var curso = CursoBuilder.Novo().Build();
+
+            Assert.Throws<ExcecaoDeDominio>(()
+                   => curso.AlterarNome(nomeInvalido))
+                .ExceptionComMensagem(Resource.NomeInvalido);
+        }
+        [Fact]
+        public void DeveAlterarCargaHoraria()
+        {
+            var cargaHorariaEsperada = faker.Random.Int(20,10000);
+            var curso = CursoBuilder.Novo().Build();
+
+            curso.AlterarCargaHoraria(cargaHorariaEsperada);
+            Assert.Equal(cargaHorariaEsperada, curso.CargaHoraria);
+        }
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-23)]
+        public void NaoDeveAlterarComCargaHorariaInvalida(int pCargaHorariaInvalida)
+        {
+            var curso = CursoBuilder.Novo().Build();
+            Assert.Throws<ExcecaoDeDominio>(()
+                   => curso.AlterarCargaHoraria(pCargaHorariaInvalida))
+                 .ExceptionComMensagem(Resource.CargaHorariaInvalida);
+        }
+        [Fact]
+        public void DeveAlterarValor()
+        {
+            var valorEsperado = faker.Random.Double(10,10000);
+
+            var curso = CursoBuilder.Novo().Build();
+
+            curso.AlterarValor(valorEsperado);
+
+            Assert.Equal(valorEsperado, curso.Valor);
+
+        }
+        [Theory]
+        [InlineData(0)]
+        [InlineData(-2)]
+        public void NaoDeveAlterarComValorInvalido(double pValorInvalido)
+        {
+            var curso = CursoBuilder.Novo().Build();
+
+            Assert.Throws<ExcecaoDeDominio>(()
+                  => curso.AlterarValor(pValorInvalido))
+                .ExceptionComMensagem(Resource.ValorInvalido);
         }
     }
 }
