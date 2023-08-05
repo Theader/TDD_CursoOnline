@@ -16,17 +16,15 @@ namespace CursoOnline.Dominio.Cursos
         {
             var cursoJaSalvo = CursoRepository.ObterPeloNome(cursoDTO.Nome);
 
-            Enum.TryParse(typeof(PublicoAlvo), cursoDTO.PublicoAlvo, out var _publicoAlvo);
-
             ValidadorDeRegra.Novo()
-                .Quando(cursoJaSalvo != null, Resource.NomeDoCursoJaExiste)
-                .Quando(_publicoAlvo == null, Resource.PublicoAlvoInvalido)
+                .Quando(cursoJaSalvo != null && cursoJaSalvo.Id != cursoDTO.Id, Resource.NomeDoCursoJaExiste)
+                .Quando(!Enum.TryParse<PublicoAlvo>(cursoDTO.PublicoAlvo,out var publicoAlvo), Resource.PublicoAlvoInvalido)
                 .DispararExcecaoSeExistir();
                                 
 
             var curso =
                 new Curso(cursoDTO.Nome, cursoDTO.Descricao, cursoDTO.CargaHoraria
-                         , (PublicoAlvo)_publicoAlvo, cursoDTO.Valor);
+                         , publicoAlvo, cursoDTO.Valor);
             if(cursoDTO.Id > 0)
             {
                 curso = CursoRepository.ObterPorId(cursoDTO.Id);

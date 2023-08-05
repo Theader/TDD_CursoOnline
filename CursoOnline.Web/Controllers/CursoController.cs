@@ -37,13 +37,24 @@ namespace CursoOnline.Web.Controllers
             return View("Index", PaginatedList<CursoParaListagemDTO>.Create(null, Request));
         }
 
-        // GET: CursoController/Details/5
+        public IActionResult Editar(int id)
+        {
+            var curso = cursoRepositorio.ObterPorId(id);
+            var dto = new CursoDTO
+            {
+                Id = curso.Id,
+                Nome = curso.Nome,
+                Descricao = curso.Descricao,
+                CargaHoraria = curso.CargaHoraria,
+                Valor = curso.Valor
+            };
+            return View("NovoOuEditar", dto);
+        }
         public IActionResult Novo()
         {
-            return View();
+            return View("NovoOuEditar", new CursoDTO());
         }
 
-        // GET: CursoController/Salvar
         [HttpPost]
         public ActionResult Salvar(CursoDTO model)
         {

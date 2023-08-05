@@ -53,7 +53,7 @@ namespace CursoOnline.DominioTest.Cursos
         [Fact]
         public void NaoDeveAdicionarCursoComNomeJaExistente()
         {
-            var cursoJaSalvo = CursoBuilder.Novo().ComNome(_cursoDTO.Nome).Build();
+            var cursoJaSalvo = CursoBuilder.Novo().ComId(432).ComNome(_cursoDTO.Nome).Build();
             _cursoRepositorioMock.Setup(x => x.ObterPeloNome(_cursoDTO.Nome)).Returns(cursoJaSalvo);
 
             Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeCurso.Armazenar(_cursoDTO))
