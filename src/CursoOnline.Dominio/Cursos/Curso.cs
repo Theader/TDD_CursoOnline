@@ -1,4 +1,5 @@
 ﻿using CursoOnline.Dominio._Base;
+using CursoOnline.Dominio.PublicosAlvo;
 using System;
 
 namespace CursoOnline.Dominio.Cursos
@@ -54,12 +55,5 @@ namespace CursoOnline.Dominio.Cursos
 
             Valor = valor;
         }
-    }
-    public enum PublicoAlvo
-    {
-        Estudante,
-        Universitario,
-        Empregado,
-        Empreendedor
     }
 }
