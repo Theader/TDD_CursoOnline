@@ -29,6 +29,11 @@ namespace CursoOnline.DominioTest._Builders
             };
 
         }
+        public AlunoBuilder ComId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public AlunoBuilder ComNome(string nome)
         {
             Nome = nome;

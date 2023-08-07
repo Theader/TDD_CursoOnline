@@ -9,7 +9,8 @@ namespace CursoOnline.Dominio.PublicosAlvo
         Estudante,
         Universitario,
         Empregado,
-        Empreendedor
+        Empreendedor,
+        Universitário
     }
 
 }
