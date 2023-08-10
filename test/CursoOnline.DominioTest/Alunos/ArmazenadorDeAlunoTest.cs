@@ -1,7 +1,11 @@
 ﻿using Bogus;
 using Bogus.Extensions.Brazil;
+using CursoOnline.Dominio.Alunos;
 using CursoOnline.Dominio.Cursos;
+using CursoOnline.Dominio.PublicosAlvo;
 using CursoOnline.Dominio._Base;
+using CursoOnline.DominioTest._Builders;
+using CursoOnline.DominioTest._Util;
 using Moq;
 using Xunit;
 
@@ -44,7 +48,7 @@ namespace CursoOnline.DominioTest.Alunos
             _alunoRepositorio.Setup(r => r.ObterPeloCpf(_alunoDto.Cpf)).Returns(alunoComMesmoCpf);
 
             Assert.Throws<ExcecaoDeDominio>(() => _armazenadorDeAluno.Armazenar(_alunoDto))
-                .ComMensagem(Resource.CpfJaCadastrado);
+                .ExceptionComMensagem(Resource.CpfJaCadastrado);
         }
 
         [Fact]

@@ -1,5 +1,6 @@
 ﻿using CursoOnline.Dominio._Base;
 using CursoOnline.Dominio.Matriculas;
+using CursoOnline.DominioTest._Builders;
 using CursoOnline.DominioTest._Util;
 using Moq;
 using System;

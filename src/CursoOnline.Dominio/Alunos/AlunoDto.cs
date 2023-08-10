@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CursoOnline.Dominio.Alunos
+﻿namespace CursoOnline.Dominio.Alunos
 {
     public class AlunoDto
     {
