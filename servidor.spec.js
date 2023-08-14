@@ -4,5 +4,5 @@ fixture{ 'Servidor' }
     .page('localhost:3000')
 
 test('Validando se está de pé', async t => {
-    await t.expect(Selector())
-})
+    await t.expect(Selector('title').innerText).eql('Home Page - CursoOnline.Web');
+});

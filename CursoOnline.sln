@@ -13,6 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoOnline.Ioc", "CursoOnl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e2e", "e2e", "{40A78B11-19F0-470E-9A1C-D48162EA1EB1}"
 	ProjectSection(SolutionItems) = preProject
+		curso.spec.js = curso.spec.js
 		servidor.spec.js = servidor.spec.js
 	EndProjectSection
 EndProject
