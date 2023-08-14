@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoOnline.Dados", "CursoO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CursoOnline.Ioc", "CursoOnline.Ioc\CursoOnline.Ioc.csproj", "{A1B489F4-36CC-4203-9D69-5349A7A7FCB8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e2e", "e2e", "{40A78B11-19F0-470E-9A1C-D48162EA1EB1}"
+	ProjectSection(SolutionItems) = preProject
+		servidor.spec.js = servidor.spec.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
