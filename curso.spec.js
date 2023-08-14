@@ -22,8 +22,8 @@ test('Deve validar campos obrigatórios', async t => {
     await t
         .click(Selector('.btn-sucess'));
     await t
-        .expect(Selector('.toast-message').withText('Nome inválido').count).eql(1);
-        .expect(Selector('.toast-message').withText('Valor inválido').count).eql(1);
-        .expect(Selector('.toast-message').withText('Carga horária inválida').count).eql(1);
+        .expect(Selector('.toast-message').withText('Nome inválido').count).eql(1)
+        .expect(Selector('.toast-message').withText('Valor precisa ser maior que 0.').count).eql(1)
+        .expect(Selector('.toast-message').withText('CargaHorária precisa ser maior que 0.').count).eql(1);
 
 })
