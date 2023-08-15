@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "e2e", "e2e", "{40A78B11-19F
 		servidor.spec.js = servidor.spec.js
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pagesmodel", "pagesmodel", "{0D8EEF32-322D-4ADD-86CC-4F91E6D58238}"
+	ProjectSection(SolutionItems) = preProject
+		Curso.js = Curso.js
+		page.js = page.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +48,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D8EEF32-322D-4ADD-86CC-4F91E6D58238} = {40A78B11-19F0-470E-9A1C-D48162EA1EB1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C91B6A3F-C0B3-4796-85B2-35DA8A1701BE}
